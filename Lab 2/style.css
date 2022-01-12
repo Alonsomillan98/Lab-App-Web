@@ -10,14 +10,30 @@ img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 10%;
-    height: 10%;
+    width: 20%;
+    height: 20%;
+    border-style: solid;
+    border-color: indigo;
+    border-width: thick;
 }
 ul{
     text-align: center;
-    font-size: 35px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: lighter;
     list-style-position: inside;
     border-style: solid;
     border-width: 5px;
+}
+#dir{
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.yel{
+    background-color: goldenrod;
+}
+.neg{
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bolder;
 }
