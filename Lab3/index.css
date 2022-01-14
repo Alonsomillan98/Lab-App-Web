@@ -16,13 +16,78 @@ body {
 @media (max-width: 767px) { 
   body { 
       background-color: red; 
-    } 
-} 
-  
+  }  
+  header{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  } 
+  .logo{
+    display: flex;
+    justify-content:center;
+  }
+  h1{
+    display: flex;
+    justify-content:center;
+  }
+  .hamburger{
+    display: flex;
+    justify-content: flex-end;
+    background-color: gray;
+  }
+  .menu{
+    display: none;
+  }  
+  .product{
+    display: flex;
+    border-width: thin;
+    border-style: ridge;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+
+  }
+  .social{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  } 
+}
+
 /* Media Query for Tablets Ipads portrait mode */ 
 @media (min-width: 768px) and (max-width: 1024px){ 
     body { 
         background-color: blue; 
+    } 
+    header{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+    }
+    .hamburger{
+      display: flex;
+      justify-content: flex-end;
+      background-color: gray;
+    }
+    .menu{
+      display: none;
+    }  
+    .product{
+      display: flex;
+      border-width: thin;
+      border-style: ridge;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+  
+    }
+    .social{
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
     } 
 } 
   
@@ -30,6 +95,34 @@ body {
 @media (min-width: 1025px){ 
     body { 
         background-color: green; 
+    }
+    header{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+    }
+    .hamburger{
+      display: none;
+    }
+    .menu{
+      display: flex;
+      background-color: gray;
+      justify-content: flex-end;
+    }  
+    .product{
+      display: flex;
+      border-width: thin;
+      border-style: ridge;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+  
     } 
+    .social{
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
 }
-
