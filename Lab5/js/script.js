@@ -1,23 +1,45 @@
+$("#ButtonPost").on('click',function(e){
+    e.preventDefault();
+    let texto = $("#todoText").val();
+    
+    
+
+    if(texto != ""){
+      $("#todoList").append(`
+        <div class = "shopItem">
+        <p class = "itemShop">${texto}</p>
+        <button class = "clear" type = "text">Clear</button>
+        <button class = "mark" type = "text">Mark</button>
+        <button class = "del" type = "text">Delete</button>
+        <p></p>
+      `);
+    }
+  })
+  
+  //Boton check para tachar el item de la lista
+  $("#todoList").on('click','.clear', function(event){
+    event.preventDefault();
+    $(this).parent().toggleClass('chec')
+  })
+
+  //Boton mark los items de la lista
+  $("#todoList").on('click','.mark', function(event){
+    event.preventDefault();
+    var input = $( "form input:checkbox" )
+    $(this).parent().toggleClass('chec')
+  })
+  
+  //Boton delete para borrar el item de la lista
+  $("#todoList").on('click','.del',function(event){
+    event.preventDefault();
+    $(this).parent().parent().remove();
+  })
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 //1 Obtener las referencias de los elementos a interactuar
  
 let post = document.getElementById("ButtonPost")
@@ -85,3 +107,4 @@ function TodoDel() {
     }
  
 }
+*/
