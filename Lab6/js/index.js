@@ -1,4 +1,5 @@
 $(".agregar").on('click',function(e){
+  e.preventDefault();
   let texto = $("#newText").val();
 
   if(texto != ""){
@@ -16,11 +17,11 @@ $(".agregar").on('click',function(e){
 //Boton check para tachar el item de la lista
 $(".Lista").on('click','.checar', function(event){
   event.preventDefault();
-  $(this).parent().toggleClass('check')
+  $(this).parent().toggleClass('chec')
 })
 
 //Boton delete para borrar el item de la lista
-$(".Lista").on('click','del',function(event){
+$(".Lista").on('click','.del',function(event){
   event.preventDefault();
   $(this).parent().parent().remove();
 })
