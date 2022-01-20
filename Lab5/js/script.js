@@ -1,3 +1,23 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //1 Obtener las referencias de los elementos a interactuar
  
 let post = document.getElementById("ButtonPost")
