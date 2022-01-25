@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 // Start your code from here
 
-let animals = ["dog","cat","rabbit","hamster","frog"]
+let animals = ["dog","cat","rabbit","hamster","fox"]
 
 
 for (let i = 0; i< animals.length; i++){
