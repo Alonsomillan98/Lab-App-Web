@@ -5,13 +5,31 @@ $(document).ready(function() {
 let animals = ["dog","cat","rabbit","hamster","fox"]
 
 
-for (let i = 0; i< animals.length; i++){
+
+for (var j = 0; j< animals.length; j++){
     let a = $("<button>")
     a.addClass("animal-button")
-    a.attr("data-type", animals[i])
-    a.text(animals[i])
+    a.attr("data-type", animals[j])
+    a.text(animals[j])
     $("#animal-buttons").append(a)
 }
+
+$("#add-animal").on('click',function(e){
+    e.preventDefault();
+    let texto = $("#animal-input").val();
+    animals.push(texto)
+    let b= animals.length
+    if (b>j){
+        let h= b-1
+        for (h= h ; h< animals.length; h++){
+            let a = $("<button>")
+            a.addClass("animal-button")
+            a.attr("data-type", animals[h])
+            a.text(animals[h])
+            $("#animal-buttons").append(a)
+        }  
+    }
+})
 
 $("#animal-buttons").on("click", ".animal-button", function(){
     
@@ -45,11 +63,25 @@ $("#animal-buttons").on("click", ".animal-button", function(){
             animalDiv.append(animalImage)
 
             $("#animals").append(animalDiv)
+
+            
         }
     })
 
 })
 
-
+$("#animal").on("click", function(){
+    if ($("img").attr("data-state") == "still"){
+        alert("feo")
+        $("img").attr("src",$("img").attr("data-animate"))
+        $("img").attr("data-state","animate")
+        
+    }
+    else{
+        alert("guapo")
+        $("img").attr("data-state","still")
+        $("img").attr("src",$("img").attr("data-still"))
+    }
+})
 
 });
