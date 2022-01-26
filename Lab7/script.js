@@ -15,6 +15,7 @@ for (var j = 0; j< animals.length; j++){
 }
 
 $("#add-animal").on('click',function(e){
+    alert("ayuda")
     e.preventDefault();
     let texto = $("#animal-input").val();
     animals.push(texto)
