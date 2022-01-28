@@ -4,32 +4,23 @@ $(document).ready(function() {
 
 let animals = ["dog","cat","rabbit","hamster","fox"]
 
-
-
-for (var j = 0; j< animals.length; j++){
+for (let i = 0; i< animals.length; i++){
     let a = $("<button>")
     a.addClass("animal-button")
-    a.attr("data-type", animals[j])
-    a.text(animals[j])
+    a.attr("data-type", animals[i])
+    a.text(animals[i])
     $("#animal-buttons").append(a)
 }
 
 $("#add-animal").on('click',function(e){
-    alert("ayuda")
     e.preventDefault();
     let texto = $("#animal-input").val();
     animals.push(texto)
-    let b= animals.length
-    if (b>j){
-        let h= b-1
-        for (h= h ; h< animals.length; h++){
-            let a = $("<button>")
-            a.addClass("animal-button")
-            a.attr("data-type", animals[h])
-            a.text(animals[h])
-            $("#animal-buttons").append(a)
-        }  
-    }
+    let a = $("<button>")
+    a.addClass("animal-button")
+    a.attr("data-type", animals[animals.length-1])
+    a.text(animals[animals.length-1])
+    $("#animal-buttons").append(a)
 })
 
 $("#animal-buttons").on("click", ".animal-button", function(){
@@ -54,11 +45,12 @@ $("#animal-buttons").on("click", ".animal-button", function(){
 
             let p = $("<p>").text("Raiting: " + rating)
 
-            let animalImage = $("<img>")
+            let animalImage = $("<img id = i >")
             animalImage.attr("src", results[i].images.fixed_height_still.url)
             animalImage.attr("data-still",results[i].images.fixed_height_still.url)
             animalImage.attr("data-animate",results[i].images.fixed_height.url )
             animalImage.attr("data-state","still")
+            animalImage.attr("number",i)
 
             animalDiv.append(p)
             animalDiv.append(animalImage)
@@ -71,9 +63,11 @@ $("#animal-buttons").on("click", ".animal-button", function(){
 
 })
 
-$("#animal").on("click", function(){
+$("#animals").on("click", function(){
     if ($("img").attr("data-state") == "still"){
         alert("feo")
+        let h = $("img").attr("number")
+        alert(h)
         $("img").attr("src",$("img").attr("data-animate"))
         $("img").attr("data-state","animate")
         
